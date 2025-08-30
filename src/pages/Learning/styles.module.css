@@ -1,0 +1,232 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.backButton {
+  padding: 0.75rem 1.5rem;
+  background: #f8f9fa;
+  color: #495057;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid #dee2e6;
+}
+
+.backButton:hover {
+  background: #e9ecef;
+  transform: translateY(-1px);
+}
+
+.progress {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6c757d;
+  background: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+}
+
+.learningCard {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e1e8ed;
+  justify-content: space-between;
+}
+
+.wordSection {
+  margin-bottom: 3rem;
+}
+
+.headword {
+  font-size: 6rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.wordInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.pos {
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white; */
+  background: #ececec;
+  color: black;
+  padding: 0.5rem 1.5rem;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
+.ipa {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #7b68ee;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  border-radius: 15px;
+  /* background: #f8f9ff;
+  border: 2px solid #e3f2fd; */
+  background: #ececec;
+}
+
+.translationSection {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.translations,
+.examples {
+  margin-bottom: 1.5rem;
+}
+
+.translations:last-child,
+.examples:last-child {
+  margin-bottom: 0;
+}
+
+.translationSection h3 {
+  color: #495057;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.translationSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.translationSection li {
+  background: white;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.knowButton {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+}
+
+.knowButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
+}
+
+.checkButton {
+  background: linear-gradient(135deg, #007bff 0%, #6610f2 100%);
+  color: white;
+}
+
+.checkButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+}
+
+.dontKnowButton {
+  background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%);
+  color: white;
+}
+
+.dontKnowButton:hover:not(.disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(220, 53, 69, 0.4);
+}
+
+.dontKnowButton.disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.5;
+  box-shadow: none;
+}
+
+.completed {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.completed h2 {
+  color: #28a745;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .learningCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .headword {
+    font-size: 2.5rem;
+  }
+
+  .wordInfo {
+    gap: 1rem;
+  }
+
+  .actions {
+    gap: 1rem;
+  }
+
+  .button {
+    min-width: 100px;
+    padding: 0.75rem 1.5rem;
+  }
+}
