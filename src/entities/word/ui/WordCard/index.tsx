@@ -7,7 +7,7 @@ interface Props {
 }
 
 function WordCard({ word }: Props) {
-  const { headword, PoS, IPA, translations, examples } = word;
+  const { headword, PoS, IPA, definitions: translations, examples } = word;
   return (
     <div className={cn(styles.container)}>
       <div className={styles.header}>
@@ -16,11 +16,17 @@ function WordCard({ word }: Props) {
         <span className={styles.ipa}>{IPA}</span>
       </div>
 
-
       <div className={styles.translations}>
         {translations.map((translate, index) => (
           <span key={translate} className={styles.translation}>
-            {index + 1}. {translate}
+            {index + 1}.{" "}
+            <span
+              dangerouslySetInnerHTML={{
+                __html: translate
+                  .replace(/_([^_]+)_/g, "<span class='italic'>$1</span>")
+                  .replace(/\*(.*?)\*/g, "<span class='highlighted'>$1</span>"),
+              }}
+            />
           </span>
         ))}
       </div>
@@ -38,7 +44,10 @@ function WordCard({ word }: Props) {
                   dangerouslySetInnerHTML={{
                     __html: sentence
                       .trim()
-                      .replace(/\*(.*?)\*/g, "<span class='highlighted'>$1</span>"),
+                      .replace(
+                        /\*(.*?)\*/g,
+                        "<span class='highlighted'>$1</span>"
+                      ),
                   }}
                 />
               </li>

@@ -83,3 +83,13 @@
   font-weight: bold;
   color: #2c3e50;
 }
+
+.translations :global(.highlighted) {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.translations :global(.italic) {
+  font-style: italic;
+  color: #6c757d;
+}
