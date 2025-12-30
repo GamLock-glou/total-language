@@ -51,8 +51,8 @@ export default function UploadWords() {
       if (!word.IPA || typeof word.IPA !== 'string') {
         throw new Error(`Word at index ${i} is missing required field "IPA"`);
       }
-      if (!Array.isArray(word.translations)) {
-        throw new Error(`Word at index ${i} has invalid "translations" field (must be an array)`);
+      if (!Array.isArray(word.definitions)) {
+        throw new Error(`Word at index ${i} has invalid "definitions" field (must be an array)`);
       }
       if (!Array.isArray(word.examples)) {
         throw new Error(`Word at index ${i} has invalid "examples" field (must be an array)`);
@@ -228,7 +228,7 @@ export default function UploadWords() {
     "headword": "hello",
     "PoS": "interjection",
     "IPA": "[həˈloʊ]",
-    "translations": ["привет", "здравствуйте"],
+    "definitions": ["привет", "здравствуйте"],
     "examples": ["*Hello*, how are you?"]
   },
   ...
